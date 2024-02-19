@@ -260,7 +260,7 @@ module aiResource 'core/ai/ai-studio.bicep' = {
     aiResourceName: 'ai-${abbrs.machineLearningServicesWorkspaces}${resourceToken}'
     aiResourceFriendlyName: '${resourceGroupName}-hub'
     aiResourceDescription: 'AI Studio Hub for ${resourceGroupName}'
-    aiProjectName: '${resourceGroupName}-project'
+    aiProjectName: 'my-project'
     location: location
     tags: tags
 
