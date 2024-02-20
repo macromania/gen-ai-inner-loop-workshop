@@ -40,3 +40,9 @@ This section will guide you through the basic concepts of Prompt Flow. The secti
 - Setting up Prompt Flow
 - Hello world chat
 - Using AI Studio
+
+## Running the Workshop Locally
+
+- **Option 1**: You can create a `workshop` directory and run code samples, exercises, and Jupyter notebooks locally. The workshop directory is ignored. It will give you a good understanding of the workshop and the code samples. You can compare your code with the code samples provided in the workshop.
+
+- **Option 2**: You can follow the [Readme](../README.md) and setup your Azure resources and run the code samples and exercises on Azure.
