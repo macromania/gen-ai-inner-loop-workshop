@@ -57,7 +57,7 @@ To create a virtual environment using `venv`, follow these steps:
 3. Run the command `python3 -m venv .venv` (where ".venv" is the name of your virtual environment).
 
 ```bash
-python3 -m venv env
+python3 -m venv .venv
 ```
 
 This will create a new directory called `env` in your project directory. This directory will contain a copy of the Python interpreter, the standard library, and various supporting files.
@@ -189,7 +189,7 @@ pf
 
 ## Jupyter Notebooks
 
-Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
+[Jupyter Notebooks](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
 
 Jupyter Notebooks are a great tool for prototyping and experimenting with code. They allow you to write and execute code, view the results, and add explanatory text all in one place. They are also a great way to share your work with others.
 
@@ -254,3 +254,92 @@ Python 3.11.6
 **✅ Step 3: Removing Outputs from Notebooks:**
 
 When you run a Jupyter notebook, the output of each cell is saved in the notebook file. This can be problematic when using version control, as the output can change each time the notebook is run, even if the code hasn't changed. This can lead to large diffs and merge conflicts. To avoid this, you can use the `nbstripout` tool to remove the output from Jupyter notebooks.
+
+Assuming you have initialized a git repository in the `workshop` directory, you can run the following command to remove the output from all the Jupyter notebooks in the directory. A good `.gitignore` file sample can be found in the [GitHub gitignore repository](https://github.com/github/gitignore/blob/main/Python.gitignore).
+
+While your command prompt is still in the virtual environment, you can install `nbstripout` using the following command:
+
+```bash
+nbstripout --install --attributes .gitattributes
+```
+
+This will install `nbstripout` and set up a `.gitattributes` file to remove the output from Jupyter notebooks. You can now commit your notebooks to version control without worrying about the output. The code view for the notebook will still show the output, but the output will not be saved in the file. See below as `outputs` array is empty after you commit the file.
+
+```json
+
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "\n",
+    "# Get the shell\n",
+    "shell = sys.executable\n",
+    "print(\"Shell:\", shell)\n",
+    "\n",
+    "# Get the profile\n",
+    "profile = sys.argv[0]\n",
+    "print(\"Profile:\", profile)\n",
+    "\n",
+    "!python --version"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
+```
+
+## VSCode extensions for Python development
+
+VSCode has a rich ecosystem of extensions for Python development. Some of the most popular extensions include:
+
+- **Python** by Microsoft: This is the official Python extension for VSCode. It provides features such as IntelliSense, linting, debugging, code navigation, code formatting, refactoring, unit tests, and Jupyter support.
+- **Jupyter** by Microsoft: This extension provides support for Jupyter Notebooks in VSCode. It allows you to create, open, and edit Jupyter Notebooks, and run code cells interactively.
+- **Pylance** by Microsoft: This is a fast and feature-rich language support for Python in VSCode. It provides type checking, auto-completion, and other advanced features.
+
+Full list of extensions required for this workshop can be found in the [devcontainer.json](../.devcontainer/devcontainer.json).
+
+## 🏁 Milestone Check
+
+Following the above exercises, you should have:
+
+- Created a virtual environment using `venv`.
+- Installed required packages using `pip install`.
+- Created a Jupyter Notebook and connected it to the virtual environment.
+- Removed the output from Jupyter notebooks using `nbstripout`.
+- Installed required VSCode extensions for Python development.
+
+The folder structure should look like this:
+
+```plaintext
+.
+├── .git
+├── .gitattributes
+├── .gitignore
+├── .venv
+├── example.ipynb
+└── requirements.txt
+```
