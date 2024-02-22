@@ -44,7 +44,7 @@ In Python 3, you can create a virtual environment using the built-in `venv` modu
 
 > Most of the code samples and projects follow a convention calling their virtual environment directory `.venv`. This is a common convention, but you can name your virtual environment directory anything you like.
 
-### 🛠️ Excercise: Create a Virtual Environment
+## 🛠️ Excercise: Create a Virtual Environment
 
 You can follow along these steps in another instance of VSCode open in the `workshop` directory. If you have already followed instructions in [README](../README.md) to setup your environment, you can skip this exercise.
 
