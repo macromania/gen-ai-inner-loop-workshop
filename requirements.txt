@@ -3,3 +3,9 @@ promptflow-tools
 ipython
 ipykernel
 nbstripout
+azure-search-documents
+openai
+azure-ai-documentintelligence
+azure-ai-formrecognizer
+tenacity
+mypy
